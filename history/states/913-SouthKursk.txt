@@ -1,0 +1,26 @@
+
+state={
+	id=913
+	name="STATE_913"
+	manpower = 100300
+	
+	state_category = city
+
+	history={
+		owner = KRS
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+        victory_points = {
+            6577 1
+        }
+		add_core_of = KRS
+	}
+
+	provinces={
+		534 3492 6481 6577 9518 11500
+	}
+
+	local_supplies=9.0 
+}

@@ -1,0 +1,22 @@
+state = {
+	id = 910
+	name = "STATE_910"
+	history = {
+		victory_points = {
+			9566 1
+		}
+		owner = KRS
+		add_core_of = KRS
+
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+	}
+	provinces = {
+		288 522 3225 6330 6565 9477 9566 11553
+	}
+	manpower = 35000
+	state_category = town
+	local_supplies = 0.0
+}

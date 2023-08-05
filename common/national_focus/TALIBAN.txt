@@ -1,0 +1,383 @@
+focus_tree = {
+	id = TALIBAN
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AFG
+		}
+	}
+	default = no
+	focus = {
+		id = TAL_reform_country
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		x = 16
+		y = 0
+completion_reward = {
+	add_political_power = 150
+	add_stability = 0.1
+}
+	}
+	focus = {
+		id = TAL_Indastry_Reform
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = {
+			focus = TAL_reform_country
+		}
+		x = 16
+		y = 1
+completion_reward = {
+	random_owned_controlled_state = {
+		add_extra_state_shared_building_slots = 1
+        add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+		}
+	}
+}
+	}
+	focus = {
+		id = TAL_Usama_ben_Laden
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = TAL_Indastry_Reform
+		}
+		x = 13
+		y = 2
+completion_reward = {
+	set_politics = {
+		ruling_party = Islamism
+		elections_allowed = no}
+		add_popularity = {
+    ideology = Islamism
+    popularity = 0.15}
+create_country_leader = {
+    name = "Usama ben Laden"
+    picture = "usama-ben-laden.dds"
+    expire = "1965.1.1"
+    ideology = Islamism
+    traits = { }
+}
+}
+	}
+	focus = {
+		id = TAL_Islaqm_corpus
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10
+		prerequisite = {
+			focus = TAL_Usama_ben_Laden
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_popularity = {
+			ideology = Islamism
+			popularity = 0.15
+ 	}
+		add_stability = 0.1
+		}
+	}
+	focus = {
+		id = TAL_Military_Reform
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 5
+		prerequisite = {
+			focus = TAL_Islaqm_corpus
+		}
+		x = 13
+		y = 4
+completion_reward = {
+	random_owned_controlled_state = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+		}
+	
+	}
+	add_manpower = 20000
+}
+
+	}
+	focus = {
+		id = TAG_Dobycah_nefti
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10
+		prerequisite = {
+			focus = TAL_Military_Reform
+		}
+		x = 13
+		y = 5
+		completion_reward = {
+			random_owned_controlled_state = {
+		add_resource = {
+			type = oil
+			amount = 15
+			}
+		add_resource = {
+			type = steel
+			amount = 10
+		}
+		}
+	}
+	}
+	focus = {
+		id = TAL_Stroitelstvo_Novyh_Dorog
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = TAG_Dobycah_nefti
+		}
+		prerequisite = {
+			focus = TAG_Dobycah_nefti
+		}
+		x = 13
+		y = 6
+completion_reward = {
+	random_owned_controlled_state = {
+		add_building_construction = {
+				type = infrastructure
+				level = 5
+				instant_build = yes
+		}
+	}
+}
+	}
+	focus = {
+		id = TAL_nesporoynoe_vremya
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = TAL_Stroitelstvo_Novyh_Dorog
+		}
+		x = 13
+		y = 7
+completion_reward = {
+	army_experience = 50
+	add_manpower = 100000
+}
+	}
+	focus = {
+		id = TAL_voina_s_Iranom
+		icon = GFX_goal_generic_major_war
+		cost = 20
+		prerequisite = {
+			focus = TAL_nesporoynoe_vremya
+		}
+		x = 13
+		y = 8
+completion_reward = {
+	create_wargoal = { type = annex_everything target = PER }
+	add_state_core = 419 
+	add_state_core = 420
+	add_state_core = 421
+	add_state_core = 417
+	add_state_core = 413
+	add_state_core = 411
+	add_state_core = 266
+	add_state_core = 418
+	add_state_core = 416
+	add_state_core = 414
+	add_state_core = 410
+	add_state_core = 412
+}
+	}
+	focus = {
+		id = TAL_Muhamed_Daud
+		icon = GFX_goal_support_communism
+		cost = 10
+		prerequisite = {
+			focus = TAL_Indastry_Reform
+		}
+		x = 19
+		y = 2
+completion_reward = {
+	set_politics = {
+		ruling_party = communism
+		elections_allowed = no}
+		add_popularity = {
+    ideology = communism
+    popularity = 0.15}
+create_country_leader = {
+    name = "Muhamed Daud"
+    picture = "communist_loh.dds"
+    expire = "1965.1.1"
+    ideology = stalinism
+    traits = { }
+}
+}
+	}
+	focus = {
+		id = TAL_borba_s_islamistami
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = TAL_Muhamed_Daud
+		}
+		x = 19
+		y = 3
+		completion_reward = {
+			add_popularity = {
+			ideology = communism
+			popularity = 0.15
+ 	}
+		add_stability = 0.1
+		}
+	}
+	focus = {
+		id = TAL_pervaya_pytiletka
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = TAL_borba_s_islamistami
+		}
+		x = 19
+		y = 4
+completion_reward = {
+	random_owned_controlled_state = {
+		add_extra_state_shared_building_slots = 4
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}
+				add_building_construction = {
+			type = arms_factory
+			level = 2
+			instant_build = yes
+	}
+}
+	}
+	}
+	focus = {
+		id = TAL_stroitelstvo_voenyh_zavodov
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = TAL_pervaya_pytiletka
+		}
+		x = 19
+		y = 5
+completion_reward = {
+	random_owned_controlled_state = {
+		add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+	}
+}
+	}
+	}
+	focus = {
+		id = TAL_stroitelstvo_fabrik
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = TAL_stroitelstvo_voenyh_zavodov
+		}
+		x = 19
+		y = 6
+completion_reward = {
+	random_owned_controlled_state = {
+		add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+	}
+}
+	}
+	}
+	focus = {
+		id = TAL_dobyha_metala
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = TAL_stroitelstvo_fabrik
+		}
+		x = 19
+		y = 7
+		completion_reward = {
+			random_owned_controlled_state = {
+		add_resource = {
+			type = steel
+			amount = 10
+			}
+		add_resource = {
+			type = aluminium
+			amount = 10
+		}
+		}
+	}
+	}
+	focus = {
+		id = TAL_podgotovka_k_voine
+		icon = GFX_goal_generic_fortify_city
+		cost = 10
+		prerequisite = {
+			focus = TAL_dobyha_metala
+		}
+		x = 19
+		y = 8
+		completion_reward = {
+			add_manpower = 150000
+	}
+	}
+	focus = {
+		id = TAL_voina_s_iranom
+		icon = GFX_goal_generic_military_deal
+		cost = 10
+		prerequisite = {
+			focus = TAL_podgotovka_k_voine
+		}
+		x = 20
+		y = 9
+completion_reward = {
+		create_wargoal = { type = annex_everything target = PER }
+	add_state_core = 419 
+	add_state_core = 420
+	add_state_core = 421
+	add_state_core = 417
+	add_state_core = 413
+	add_state_core = 411
+	add_state_core = 266
+	add_state_core = 418
+	add_state_core = 416
+	add_state_core = 414
+	add_state_core = 410
+	add_state_core = 412
+}
+	}
+	focus = {
+		id = TAL_sopernichestvo_s_SSSR
+		icon = GFX_goal_demand_sudetenland
+		cost = 14
+		prerequisite = {
+			focus = TAL_voina_s_iranom
+		}
+		x = 20
+		y = 10
+completion_reward = {
+	add_manpower = 200000
+}
+	}
+	focus = {
+		id = TAG_velikaya_voina
+		icon = GFX_goal_generic_major_war
+		cost = 20
+		prerequisite = {
+			focus = TAL_sopernichestvo_s_SSSR
+		}
+		x = 20
+		y = 11
+completion_reward = {
+	create_wargoal = { type = annex_everything target = SOV }
+}
+	}
+}

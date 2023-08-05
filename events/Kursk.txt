@@ -1,0 +1,59 @@
+add_namespace = kursk
+
+country_event = {
+    id = kursk.1
+    title = kursk.1.t
+    desc = kursk.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = kursk.1.a
+
+        ai_chance = {
+            base = 50
+        }
+        KRS = {
+            transfer_state = 221
+            transfer_state = 225
+        }
+
+    }
+    option = {
+        name = kursk.1.base
+        ai_chance = {
+            base = 50
+        }
+        KRS = {create_wargoal = {type = take_state_focus
+        target = UKR
+        generator = {221 225}
+        }}
+    }
+}
+
+country_event = {
+    id = kursk.2
+    title = kursk.2.t
+    desc = kursk.2.d
+    is_triggered_only = yes
+    option = {
+        name = kursk.2.a
+
+        ai_chance = {
+            base = 100
+        }
+        KRS = {
+            transfer_state = 222
+        }
+
+    }
+    option = {
+        name = kursk.2.b
+        ai_chance = {
+            base = 0
+        }
+        KRS = {create_wargoal = {type = take_state_focus
+        target = SOV
+        generator = {222}
+        }}
+    }
+}

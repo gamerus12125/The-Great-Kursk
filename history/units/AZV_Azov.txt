@@ -1,0 +1,13 @@
+division_template = {
+    name = "Gays"
+
+    division_names_group = KRS_ARM_01
+    regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+    priority = 1
+}
+
+units = { }

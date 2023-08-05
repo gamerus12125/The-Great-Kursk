@@ -1,0 +1,30 @@
+
+state={
+	id=240
+	name="STATE_240" # Belgorod
+	manpower = 1364537
+	
+	state_category = town
+
+	history={
+		victory_points = {
+			9449 1
+		}
+		owner = KRS
+		buildings = {
+			infrastructure = 3 #was: 5
+		}
+		add_core_of = KRS
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 1
+			}
+		}
+	}
+
+	provinces={
+		473 6432 6517 9424 9449 9489 11439 
+	}
+
+	local_supplies=0.0 
+}

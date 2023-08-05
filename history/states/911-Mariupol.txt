@@ -1,0 +1,30 @@
+state = {
+	id = 911
+	name = "STATE_911"
+	resources={
+		steel=12 # was: 56
+	}
+
+	history = {
+		victory_points = {
+			6420 1
+		}
+		owner = AZV
+		add_core_of = AZV
+
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+            dockyard = 1
+            6420 = {
+                naval_base = 5
+            }
+		}
+	}
+    provinces = {
+        3421 6420 6776	
+    }
+	manpower = 35000
+	state_category = city
+	local_supplies = 0.0
+}

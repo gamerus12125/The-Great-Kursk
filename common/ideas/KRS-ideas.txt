@@ -1,0 +1,12 @@
+ideas = {
+
+    country = {
+        KRS_communism_influence = {
+            picture = KRS_communism_influence
+
+            modifier = {
+                communism_drift = 0.1
+            }
+        }
+    }
+}

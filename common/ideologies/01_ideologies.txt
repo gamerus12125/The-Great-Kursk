@@ -1,0 +1,15 @@
+ideologies = {
+    Islamism = {
+        types = {
+            Islamism = { }
+        }
+        color = {0 0 0}
+            war_impact_on_world_tension = 0.1
+            faction_impact_on_world_tension = 0.5
+            rules = {
+                canforce_goverment = yes
+                can_send_volunteers = yes
+                can_puppet = yes
+            }
+    }
+}

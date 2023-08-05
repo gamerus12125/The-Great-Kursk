@@ -1,0 +1,300 @@
+focus_tree = {
+	id = KRS_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = KRS
+		}
+	}
+	default = no
+	focus = {
+		id = KRS_begining
+		icon = GFX_goal_generic_military_deal
+		x = 8
+		y = 0
+		cost = 5
+		completion_reward = {
+		add_political_power = 100
+		add_stability = 0.1
+		}
+
+	}
+	focus = {
+		id = KRS_communism
+		icon = GFX_goal_support_communism
+		cost = 5
+		prerequisite = {
+			focus = KRS_begining
+		}
+		mutually_exclusive = {
+			focus = KRS_fascism
+		}
+		x = 2
+		y = 2
+		completion_reward = {
+			add_ideas = KRS_communism_influence
+			add_political_power = 50
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.1
+			}
+
+		}
+
+	}
+	focus = {
+		id = KRS_shooting
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		prerequisite = {
+			focus = KRS_communism
+		}
+		x = 0
+		y = 3
+		completion_reward = {
+			add_manpower = -10000
+				add_popularity = {
+					ideology = communism 
+					popularity = 0.1
+			}
+		}
+
+	}
+	focus = {
+		id = KRS_die_yarov
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = {
+			focus = KRS_communism
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Верховный совет КССР"
+				desc = ""
+				picture = "soviet_of_kssr.dds"
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = { }
+}
+		}
+
+	}
+	focus = {
+		id = KRS_abolition_private_property
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = KRS_communism
+		}
+		completion_reward = {
+			random_controlled_state ={
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_controlled_state ={
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			}
+		x = 4
+		y = 3
+
+	}
+	focus = {
+		id = KRS_new_war_fabrics
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = KRS_abolition_private_property
+		}
+		x = 5
+		y = 4
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = KRS_form_new_fabrics
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		prerequisite = {
+			focus = KRS_abolition_private_property
+		}
+		completion_reward = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		x = 8
+		y = 4
+
+	}
+	focus = {
+		id = KRS_fascism
+		icon = GFX_goal_support_fascism
+		cost = 5
+		prerequisite = {
+			focus = KRS_begining
+		}
+		mutually_exclusive = {
+			focus = KRS_communism
+		}
+		x = 14
+		y = 2
+		completion_reward = {
+			retire_country_leader = yes
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Александр Македонский"
+			desc = ""
+			picture = "makedonsky.dds"
+			expire = "1965.1.1"
+			ideology = nazism
+		}
+		}
+
+	}
+	focus = {
+		id = KRS_form_national_army
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 0
+		prerequisite = {
+			focus = KRS_shooting
+		}
+		completion_reward = {
+			add_manpower = 100000
+			army_experience = 20
+		}
+		x = 0
+		y = 5
+
+	}
+	focus = {
+		id = KRS_annex_orel
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 0
+		prerequisite = {
+			focus = KRS_die_yarov
+		}
+		x = 8
+		y = 7
+		completion_reward = {
+			add_state_core = 222
+			SOV = {country_event = {id = kursk.2}}
+		}
+
+	}
+	focus = {
+		id = KRS_annex_kharkiv_and_sumy
+		icon = GFX_goal_generic_attack_allies
+		cost = 0
+		prerequisite = {
+			focus = KRS_annex_orel
+		}
+		x = 8
+		y = 8
+		completion_reward = {
+			add_state_core = 221
+			add_state_core = 225
+			UKR = {country_event = {id = kursk.1}}
+		}
+
+	}
+	focus = {
+		id = KRS_pact_peace_of_crimea
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 0
+		prerequisite = {
+			focus = KRS_annex_kharkiv_and_sumy
+		}
+		x = 8
+		y = 9
+
+	}
+	focus = {
+		id = KRS_pact_peace_of_afganistan
+		icon = GFX_goal_generic_alliance
+		cost = 0
+		prerequisite = {
+			focus = KRS_annex_kharkiv_and_sumy
+		}
+		x = 10
+		y = 9
+
+	}
+	}
+	focus = {
+		id = KRS_priglasit_afgan_and_crimea
+		icon = GFX_goal_anschluss
+		cost = 0
+		prerequisite = {
+			focus = KRS_pact_peace_of_afganistan
+			focus = KRS_pact_peace_of_crimea
+		}
+		x = 8
+		y = 10
+		completion_reward = {
+		KRS = {add_to_faction = TAL}
+}
+	}
+	focus = {
+		id = KRS_end_of_communism
+		icon = GFX_goal_anti_comintern_pact
+		cost = 0
+		prerequisite = {
+			focus = KRS_fascism
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.5
+}
+
+}
+	}
+	focus = {
+		id = KRS_war_in_USSR
+		icon = GFX_goal_generic_attack_allies
+		cost = 0
+		prerequisite = {
+			focus = KRS_end_of_communism
+		}
+		x = 14
+		y = 6
+		completion_reward = {
+		declare_war_on = {
+   			target = SOV
+   			type = annex_everything
+}
+}
+	}

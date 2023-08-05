@@ -1,0 +1,232 @@
+focus_tree = {
+	id = Azov_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = AZV
+		}
+	}
+	default = no
+	focus = {
+		id = AZV_End_crisis
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10
+		x = 8
+		y = 0
+		completion_reward = {
+			remove_ideas = AZV_crisis
+		}
+
+	}
+	focus = {
+		id = AZV_consolidation_power
+		icon = GFX_goal_generic_political_pressure
+		cost = 10
+		prerequisite = {
+			focus = AZV_End_crisis
+		}
+		x = 8
+		y = 2
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+		}
+		}
+
+	}
+	focus = {
+		id = AZV_Improving_life
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		prerequisite = {
+			focus = AZV_consolidation_power
+		}
+		x = 3
+		y = 3
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = -50
+		}
+
+	}
+	focus = {
+		id = AZV_censorship
+		icon = GFX_goal_generic_demand_territory
+		cost = 10
+		prerequisite = {
+			focus = AZV_Improving_life
+		}
+		mutually_exclusive = {
+			focus = AZV_freedom_of_speech
+		}
+		x = 1
+		y = 5
+		completion_reward = {
+			add_political_power = -50
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+		}
+			add_war_support = 0.1
+		}
+
+	}
+	focus = {
+		id = AZV_freedom_of_speech
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		prerequisite = {
+			focus = AZV_Improving_life
+		}
+		mutually_exclusive = {
+			focus = AZV_censorship
+		}
+		x = 5
+		y = 5
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = AZV_freedom_of_speech
+		}
+
+	}
+	focus = {
+		id = AZV_foreign_policy
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = AZV_freedom_of_speech
+		}
+		prerequisite = {
+			focus = AZV_censorship
+		}
+		x = 3
+		y = 6
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = AZV_policy_of_collective_security
+		}
+
+	}
+	focus = {
+		id = AZV_new_industry
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = AZV_consolidation_power
+		}
+		x = 15
+		y = 3
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AZV_new_fabrics
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = AZV_new_industry
+		}
+		x = 12
+		y = 5
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		add_political_power = -100
+		add_timed_idea = { idea = AZV_building_factories  days = 90 } 
+		}
+	}
+	focus = {
+		id = AZV_better_machines
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = AZV_new_industry
+		}
+		x = 15
+		y = 5
+		completion_reward = {
+			add_ideas = AZV_better_machines
+		}
+
+	}
+	focus = {
+		id = AZV_alliance
+		icon = GFX_goal_generic_improve_relations
+		cost = 10
+		prerequisite = {
+			focus = AZV_foreign_policy
+		}
+		x = 8
+		y = 7
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction = "Коллективный пакт безопасности"
+		}
+
+	}
+	focus = {
+		id = AZV_rivals
+		icon = GFX_goal_demand_sudetenland
+		cost = 10
+		prerequisite = {
+			focus = AZV_foreign_policy
+		}
+		x = 11
+		y = 7
+		completion_reward = {
+			add_state_core = 234
+			add_state_core = 227
+			add_state_core = 226
+			add_state_core = 197
+			add_state_core = 192
+			add_state_core = 834
+			add_state_core = 228
+			create_wargoal = { type = puppet_wargoal_focus target = UKR }
+		}
+	}
+	focus = {
+		id = AZV_new_war_fabrics
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		prerequisite = {
+			focus = AZV_new_industry
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_ideas = AZV_building_arms_factories
+		}
+	}
+}
