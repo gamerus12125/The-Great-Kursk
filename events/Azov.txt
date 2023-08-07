@@ -1,0 +1,53 @@
+add_namespace = azov
+
+country_event = {
+    id = azov.1
+    title = azov.1.t
+    desc = azov.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = azov.1.a
+
+        ai_chance = {
+            base = 100
+        }
+
+        AZV = {
+            transfer_state = 234
+        }
+
+    }
+    option = {
+        name = azov.1.b
+
+        ai_chance = {
+            base = 0
+        }
+        AZV = {create_wargoal = {type = take_state_focus
+        target = SOV
+        generator = {234}
+        }}
+    }
+}
+
+country_event = {
+    id = azov.2
+    title = azov.2.t
+    desc = azov.2.d
+    is_triggered_only = yes
+
+    option = {
+        name = azov.2.a
+        ai_chance = {
+            base = 90
+        }
+        AZV = {add_to_faction = ROM}
+    }
+    option = {
+        name = azov.2.b
+        ai_chance = {
+            base = 10
+        }
+    }
+}

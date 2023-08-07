@@ -185,7 +185,7 @@ focus_tree = {
 	focus = {
 		id = KRS_form_national_army
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_shooting
 		}
@@ -200,7 +200,7 @@ focus_tree = {
 	focus = {
 		id = KRS_annex_orel
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_die_yarov
 		}
@@ -215,7 +215,7 @@ focus_tree = {
 	focus = {
 		id = KRS_annex_kharkiv_and_sumy
 		icon = GFX_goal_generic_attack_allies
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_annex_orel
 		}
@@ -231,35 +231,49 @@ focus_tree = {
 	focus = {
 		id = KRS_pact_peace_of_crimea
 		icon = GFX_goal_molotov_ribbentrop_pact
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_annex_kharkiv_and_sumy
 		}
 		x = 8
 		y = 9
+		completion_reward = {
+			diplomatic_relation = {
+				country = AZV
+				relation = non_aggression_pact
+				active = no
+			}
+		}
 
 	}
 	focus = {
 		id = KRS_pact_peace_of_afganistan
 		icon = GFX_goal_generic_alliance
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_annex_kharkiv_and_sumy
 		}
 		x = 10
 		y = 9
+		completion_reward = {
+			diplomatic_relation = {
+				country = AFG
+				relation = non_aggression_pact
+				active = no
+			}
+		}
 
 	}
 	}
 	focus = {
 		id = KRS_priglasit_afgan_and_crimea
 		icon = GFX_goal_anschluss
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_pact_peace_of_afganistan
 			focus = KRS_pact_peace_of_crimea
 		}
-		x = 8
+		x = 12
 		y = 10
 		completion_reward = {
 		KRS = {add_to_faction = TAL}
@@ -268,7 +282,7 @@ focus_tree = {
 	focus = {
 		id = KRS_end_of_communism
 		icon = GFX_goal_anti_comintern_pact
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_fascism
 		}
@@ -285,7 +299,7 @@ focus_tree = {
 	focus = {
 		id = KRS_war_in_USSR
 		icon = GFX_goal_generic_attack_allies
-		cost = 0
+		cost = 10
 		prerequisite = {
 			focus = KRS_end_of_communism
 		}

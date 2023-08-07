@@ -11,7 +11,7 @@ focus_tree = {
 	focus = {
 		id = AZV_End_crisis
 		icon = GFX_goal_generic_consumer_goods
-		cost = 10
+		cost = 5
 		x = 8
 		y = 0
 		completion_reward = {
@@ -99,8 +99,6 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = AZV_freedom_of_speech
-		}
-		prerequisite = {
 			focus = AZV_censorship
 		}
 		x = 3
@@ -226,7 +224,134 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas = AZV_building_arms_factories
+			add_timed_idea = {idea = AZV_building_arms_factories days = 90}
+		}
+	}
+	focus = {
+		id = AZV_annex_krasnodar
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		cost = 5
+		prerequisite = {
+			focus = AZV_rivals
+		}
+		x = 11
+		y = 8
+		completion_reward = {
+			SOV = {country_event = {id = azov.1}}
+		}
+	}
+	focus = {
+		x = 18
+		y = 0
+		id = AZV_patriots
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		completion_reward = {
+			army_experience = 30
+			add_manpower = 100000
+			add_ideas = AZV_patriots
+		}
+	}
+	focus = {
+		x = 18
+		y = 1
+		id = AZV_military_research
+		prerequisite = {
+			focus = AZV_patriots
+		}
+		icon = GFX_focus_BUL_support_macedonian_organizations
+		cost = 5
+		completion_reward = {
+			add_equipment_to_stockpile = {
+        		type = infantry_equipment_1
+        		amount = 10000
+
+    		}
+		add_tech_bonus = {
+			name = infantry_bonus
+			bonus = 1
+			uses = 4
+			category = infantry_weapons
+			category = artillery
+		}
+
+		}
+	}
+	focus = {
+		x = 12 #18
+		y = 6
+		id = AZV_better_qualification
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = AZV_new_fabrics
+		}
+		completion_reward = {
+			add_ideas = AZV_better_qualification
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		x = 15
+		y = 6
+		id = AZV_buying_new_machines
+		icon = GFX_focus_SOV_merge_plants
+		cost = 10
+		prerequisite = {
+			focus = AZV_better_machines
+		}
+		completion_reward = {
+			add_political_power = -100
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		x = 18
+		y = 6
+		id = AZV_better_mining_and_research
+		icon = GFX_focus_SOV_organize_wreckers
+		cost = 10
+		prerequisite = {
+			focus = AZV_new_war_fabrics
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+					add_resource = {
+						type = steel
+						amount = 24
+					}
+					add_resource = {
+						type = aluminium
+						amount = 21
+					}
+			}
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 0.5
+				uses = 5
+				category = electronics
+				category = industry
+			}
+		}
+	}
+	focus = {
+		x = 8
+		y = 8
+		id = AZV_invite_romania
+		icon = GFX_focus_SOV_reinforce_southern_naval_bases
+		cost = 5
+		prerequisite = {
+			focus = AZV_alliance
+		}
+		completion_reward = {
+			ROM = {country_event = {id = azov.2}}
 		}
 	}
 }

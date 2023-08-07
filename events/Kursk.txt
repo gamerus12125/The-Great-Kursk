@@ -19,7 +19,7 @@ country_event = {
 
     }
     option = {
-        name = kursk.1.base
+        name = kursk.1.b
         ai_chance = {
             base = 50
         }

@@ -48,5 +48,23 @@ ideas = {
                 send_volunteer_factor = 0.5
             }
         }
+        AZV_patriots = {
+            picture = generic_infantry_bonus
+            modifier = {
+                army_attack_factor = 0.2
+                army_core_defence_factor = 0.5 
+                army_speed_factor = 0.1
+                army_org_regain = 0.3
+                weekly_manpower = 500
+            }
+        }
+        AZV_better_qualification = {
+            picture = idea_ast_all_in
+            modifier = {
+                production_speed_industrial_complex_factor = 0.3
+                consumer_goods_factor = -0.2
+                industry_repair_factor = 0.2
+            }
+        }
     }
 }
